@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Карусель</title>
+    <style>
+
+        body{
+            background-color: #333;
+        }
+        #slider_container{
+            position: relative;
+            width: 600px;
+            height: 300px;
+            margin: 0 auto;
+            border-bottom: 5px solid green;
+            overflow: hidden;
+        }
+        .slides{
+            background-color: #fff;
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            height: 100%;
+        }
+        .slides>li{
+            float: left;
+            height: 100%;
+            background-color: #e1e1e1;
+            font-size: 40px;
+        }
+        .slides li:nth-child(even){
+            background-color: #3498db;
+        }
+        .controls{
+            text-align: center;
+            padding-top: 40px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .controls button{
+            border: none;
+            padding: 10px 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="slider_container">
+    <ul class="slides">
+        <li> 1 </li>
+        <li> 2 </li>
+        <li> 3 </li>
+        <li> 4 </li>
+    </ul>
+    <div class="controls">
+        <button id="prevSlide">PREV</button>
+        <button id="nextSlide">NEXT</button>
+    </div>
+</div>
+
+<script src="jquery-2.1.4.min.js"></script>
+<script src="jquery.carousel.js"></script>
+<script>
+
+//    $(document).ready(function(){
+//
+//        var w = $('#slider_container').width();
+//        $('.slides>li').width( w );
+//        $('.slides').width( w * $('.slides>li').length );
+//        $('.slides').css( 'left', -w );
+//        $('.slides>li:last-child').prependTo('.slides');
+//
+//        function next(){
+//            $('.slides').animate({
+//                'margin-left': -w
+//            }, 400, function(){
+//                $('.slides>li:first-child').appendTo( '.slides' )
+//                $('.slides').css( 'margin-left', 0 )
+//            }) 
+//        }
+//
+//        $('#nextSlide').click( next );
+//
+//        function prev(){
+//            $('.slides').animate({
+//                'margin-left': w
+//            }, 400, function(){
+//                $('.slides>li:last-child').prependTo( '.slides' )
+//                $('.slides').css( 'margin-left', 0 )
+//            }) 
+//        }
+//
+//        $('#prevSlide').click( prev );
+//
+//    })
+
+        $('#slider_container').carousel({speed:1000});
+    
+    </script>
+
+</body>
+</html>
